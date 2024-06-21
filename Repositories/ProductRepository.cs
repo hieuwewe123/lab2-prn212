@@ -1,5 +1,6 @@
-﻿using BusinessObjects;
-using DataAccessLayer;
+﻿using BusinessObjects_;
+using BusinessObjects_.Models;
+using DataAccessObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;

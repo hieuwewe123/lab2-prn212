@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-           Loaded="Window_Loaded"
+        Loaded="Window_Loaded"
         WindowStartupLocation="CenterScreen"
-        Title="Product Managerment" Height="670" Width="710">
+        Title="Product Management" Height="670" Width="710">
     <Grid>
         <Grid>
             <Grid.Background>
@@ -64,7 +64,15 @@
             <ComboBox x:Name="cboCategory" Margin="4,4,4,4" Grid.Column="2" Grid.Row="5" Grid.ColumnSpan="2" />
 
             <DataGrid x:Name="dgData" Margin="4,4,4,63" Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="2" 
-                      SelectionChanged="dgData_SelectionChanged" />
+                      SelectionChanged="dgData_SelectionChanged" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Product ID" Binding="{Binding ProductId}" />
+                    <DataGridTextColumn Header="Product Name" Binding="{Binding ProductName}" />
+                    <DataGridTextColumn Header="Price" Binding="{Binding UnitPrice}" />
+                    <DataGridTextColumn Header="Units In Stock" Binding="{Binding UnitsInStock}" />
+                    <DataGridTextColumn Header="Category" Binding="{Binding Category.CategoryName}" />
+                </DataGrid.Columns>
+            </DataGrid>
 
             <Button x:Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="29,365,0,16" Grid.Row="6" 
                     Grid.RowSpan="2" Width="121" Background="#FF0099FF" BorderBrush="White" Foreground="White" 
